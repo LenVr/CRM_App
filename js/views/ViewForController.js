@@ -1,5 +1,5 @@
-import { div } from "../libs/html";
-import { View } from "./view";
+import { div } from "../libs/html.js";
+import { View } from "./view.js";
 
 
 export class ViewForController extends View {
