@@ -9,7 +9,5 @@ export class SigninView extends ViewForController {
         this.signInIcon = div(this.elementsContainer, { className: "iconDiv" });
         this.signImg = img(this.signInIcon, { className: "IconImg", src: "../../../assets/AccIcon.png" })
 
-        this.setStartPosition()
-        this.moveIn()
     }
 }

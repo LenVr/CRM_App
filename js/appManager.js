@@ -31,6 +31,7 @@ export class AppManager {
                 break;
             case SIGNIN:
                 this.currentController = new SignInController(this, this.controllerContainer);
+                break;
 
         }
     }
