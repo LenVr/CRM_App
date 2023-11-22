@@ -3,3 +3,33 @@
     height: 100%;
     position: absolute;
 }
+
+.inputsDiv {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.personalDivInfo,
+.contactDivInfo {
+    flex: 1;
+    box-sizing: border-box;
+    margin: 10px;
+}
+
+@media (max-width: 768px) {
+    .inputsDiv {
+        flex-direction: column;
+    }
+}
+
+
+.input {
+    border-radius: 10px;
+    border-color: rgb(168, 242, 249);
+    width: 200px;
+    height: 20px;
+
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+}
