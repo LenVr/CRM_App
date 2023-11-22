@@ -4,4 +4,8 @@ export class Controller {
         this.service = null;
         this.view = null;
     }
+
+    delete() {
+        this.view.moveOut()
+    }
 }

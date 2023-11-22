@@ -25,6 +25,7 @@
 
 .fade {
     position: fixed;
+    top: 60px;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.75);
@@ -36,11 +37,35 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    top: 60px;
     position: fixed;
     width: 100%;
     height: 100%;
     background: #F3F9FF;
-    background: linear-gradient(160deg, #92c8fe 0%, #5cbaf072 100%);
+    background: linear-gradient(160deg, #b1d8ff, #a2dcfd);
 
     user-select: none;
+}
+
+.iconDiv {
+    animation-name: flotando;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+
+    user-select: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.IconImg {
+    margin-bottom: 10px;
+    width: 300px;
+    height: auto;
+}
+
+.hidden {
+    display: none;
 }

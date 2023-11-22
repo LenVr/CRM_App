@@ -1,11 +1,13 @@
 import { div, img, p, h2, span } from "../../libs/html.js";
 import { ViewForController } from "../../views/ViewForController.js";
+import { LOGIN, SIGNIN } from "../../libs/constantes.js";
 
 export class MenuView extends ViewForController {
     constructor(controller, parent) {
         super(controller, parent)
         this.container.className = 'menuController';
 
+        /* img movement and img change */
         this.cloudIconDiv = div(this.elementsContainer, { className: "cloudIconDiv", id: "cloudIcon" });
 
         this.images = [
@@ -31,12 +33,15 @@ export class MenuView extends ViewForController {
             backspeed: 100,
             startDelay: 300
         });
+        /* img movement and img change */
 
-        this.accessBtn = div(this.elementsContainer, { className: "accessBtn", innerHTML: "Login" });
-        this.accessBtn = div(this.elementsContainer, { className: "accessBtn", innerHTML: "Create account" });
+        /* Access btns and nav logic */
+        this.loginBtn = div(this.elementsContainer, { className: "accessBtn", innerHTML: "Login", onclick: this.onLoginBtn.bind(this) });
+        this.signinBtn = div(this.elementsContainer, { className: "accessBtn", innerHTML: "Create account", onclick: this.onSigninBtn.bind(this) });
 
     }
 
+    /* img movement and img change */
     setImg(index) {
         this.cloudIconDiv.innerHTML = '';
         img(this.cloudIconDiv, { className: "cloudIconImg", src: this.images[index] });
@@ -46,4 +51,16 @@ export class MenuView extends ViewForController {
         this.currentIndex = (this.currentIndex + 1) % this.images.length;
         this.setImg(this.currentIndex);
     }
+    /* img movement and img change */
+
+    /* Access btns and nav logic */
+
+    onLoginBtn() {
+        this.controller.appManager.showController(LOGIN)
+    }
+
+    onSigninBtn() {
+        this.controller.appManager.showController(SIGNIN)
+    }
+
 }
