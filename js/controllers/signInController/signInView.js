@@ -14,8 +14,8 @@ export class SigninView extends ViewForController {
         this.contactDivInfo = div(this.inputsDiv, { className: "contactDivInfo" });
 
         /* personal information */
-        this.firtsName = p(this.personalDivInfo, { className: 'inputName', innerHTML: "First name" });
-        this.firtsNameInput = input(this.personalDivInfo, { className: "input", name: "firstName" });
+        this.firstName = p(this.personalDivInfo, { className: 'inputName', innerHTML: "First name" });
+        this.firstNameInput = input(this.personalDivInfo, { className: "input", name: "firstName" });
 
         this.lastName = p(this.personalDivInfo, { className: 'inputName', innerHTML: "Last name" });
         this.lastNameInput = input(this.personalDivInfo, { className: "input", name: "lastName" });
@@ -39,6 +39,36 @@ export class SigninView extends ViewForController {
     }
 
     onCreate() {
-        console.log('account created')
+        let firstName = this.firstNameInput.value;
+        let lastName = this.lastNameInput.value;
+        let date = this.dateOfBirthInput.value;
+
+        let email = this.emailInput.value;
+        let phone = this.phoneInput.value;
+        let id = this.idInput.value;
+
+        if (firstName !== '') {
+            window.localStorage.setItem('firstName', firstName)
+        }
+
+        if (lastName !== '') {
+            window.localStorage.setItem('lastName', lastName)
+        }
+
+        if (date !== '') {
+            window.localStorage.setItem('date', date)
+        }
+
+        if (email !== '') {
+            window.localStorage.setItem('email', email)
+        }
+
+        if (phone !== '') {
+            window.localStorage.setItem('phone', phone)
+        }
+
+        if (id !== '') {
+            window.localStorage.setItem('id', id)
+        }
     }
 }

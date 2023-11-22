@@ -1,3 +1,4 @@
+import { LoginController } from "./controllers/loginController/loginController.js";
 import { MenuController } from "./controllers/menuController/menuController.js";
 import { NavbarController } from "./controllers/navbar/navbarController.js";
 import { SignInController } from "./controllers/signInController/signInController.js";
@@ -29,6 +30,9 @@ export class AppManager {
                     this.navbarViewController.hideBackBtn()
                 }
                 break;
+            case LOGIN:
+                this.currentController = new LoginController(this, this.controllerContainer);
+                break
             case SIGNIN:
                 this.currentController = new SignInController(this, this.controllerContainer);
                 break;

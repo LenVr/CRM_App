@@ -1,0 +1,26 @@
+.loginController {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.loginDivInputs {
+    margin: 20px;
+    text-align: center;
+}
+
+.inputNameLogin {
+    font-size: 20px;
+}
+
+.inputLogin {
+    border-radius: 10px;
+    border-color: rgb(168, 242, 249);
+    width: 200px;
+    height: 20px;
+
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+    margin: 10px;
+}
