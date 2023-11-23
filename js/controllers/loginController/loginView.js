@@ -11,11 +11,11 @@ export class LoginView extends ViewForController {
 
         this.loginDivInputs = div(this.elementsContainer, { className: 'loginDivInputs' })
 
-        this.email = p(this.loginDivInputs, { className: "inputNameLogin", innerHTML: "Email" });
-        this.emailInput = input(this.loginDivInputs, { className: "inputLogin", name: "email" });
-
         this.id = p(this.loginDivInputs, { className: "inputNameLogin", innerHTML: "ID" });
         this.idInput = input(this.loginDivInputs, { className: "inputLogin", name: "id" });
+
+        this.email = p(this.loginDivInputs, { className: "inputNameLogin", innerHTML: "Email" });
+        this.emailInput = input(this.loginDivInputs, { className: "inputLogin", name: "email" });
 
         this.loginBtn = div(this.elementsContainer, { className: "accessBtn", innerHTML: "Login", onclick: this.onLoginBtn.bind(this) })
     }

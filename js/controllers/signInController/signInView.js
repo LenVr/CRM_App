@@ -1,10 +1,14 @@
+import { MENU } from "../../libs/constantes.js";
 import { div, img, input, p } from "../../libs/html.js";
-import { ViewForController } from "../../views/ViewForController.js"
+import { ViewForController } from "../../views/ViewForController.js";
+import { AlertLibrary } from '../../libs/alerts.js';
+
 
 export class SigninView extends ViewForController {
     constructor(controller, parent) {
         super(controller, parent);
         this.container.className = 'signInController';
+        this.controller = controller;
 
         this.signInIcon = div(this.elementsContainer, { className: "iconDiv" });
         this.signImg = img(this.signInIcon, { className: "IconImg", src: "../../../assets/AccIcon.png" });
@@ -39,6 +43,7 @@ export class SigninView extends ViewForController {
     }
 
     onCreate() {
+        let myAlerts = new AlertLibrary();
         let firstName = this.firstNameInput.value;
         let lastName = this.lastNameInput.value;
         let date = this.dateOfBirthInput.value;
@@ -47,28 +52,26 @@ export class SigninView extends ViewForController {
         let phone = this.phoneInput.value;
         let id = this.idInput.value;
 
+
         if (firstName !== '') {
-            window.localStorage.setItem('firstName', firstName)
-        }
-
-        if (lastName !== '') {
             window.localStorage.setItem('lastName', lastName)
-        }
-
-        if (date !== '') {
+        } if (lastName !== '') {
+            window.localStorage.setItem('lastName', lastName)
+        } if (date !== '') {
             window.localStorage.setItem('date', date)
-        }
-
-        if (email !== '') {
+        } if (email !== '') {
             window.localStorage.setItem('email', email)
-        }
-
-        if (phone !== '') {
+        } if (phone !== '') {
             window.localStorage.setItem('phone', phone)
-        }
-
-        if (id !== '') {
+        } if (id !== '') {
             window.localStorage.setItem('id', id)
+            myAlerts.successAlert(this.elementsContainer, () => {
+                this.controller.appManager.showController(MENU)
+            });
+        } else {
+            myAlerts.errorAlert(this.elementsContainer, () => {
+                console.log('closing Alert')
+            });
         }
     }
 }
