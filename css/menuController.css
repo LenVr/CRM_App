@@ -29,31 +29,6 @@
     height: auto;
 }
 
-.accessBtn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-    background-color: #F3F9FF;
-    width: 25%;
-    height: 40px;
-    margin: 15px;
-
-    box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.5);
-    -webkit-box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.5);
-
-    border-radius: 5px;
-    border: 1px solid black;
-
-    font-weight: bold;
-}
-
-.accessBtn:hover {
-    cursor: pointer;
-    scale: 1.09;
-}
-
 /* ANIMACIONES */
 
 @keyframes flotando {

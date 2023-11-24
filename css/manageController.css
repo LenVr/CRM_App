@@ -1,0 +1,26 @@
+.accessBtnSv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    background-color: #85e2fe;
+    width: 25%;
+    height: 40px;
+    margin-top: 50px;
+
+    box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.5);
+
+    border-radius: 5px;
+    border: 1px solid black;
+
+    font-weight: bold;
+    color: black;
+    font-weight: bold;
+}
+
+.accessBtnSv:hover {
+    cursor: pointer;
+    scale: 1.09;
+}

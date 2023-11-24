@@ -1,12 +1,14 @@
 import { MANAGE } from "../../libs/constantes.js";
 import { div, img, input, p } from "../../libs/html.js";
-import { ViewForController } from "../../views/ViewForController.js"
+import { ViewForController } from "../../views/ViewForController.js";
+import { AlertLibrary } from '../../libs/alerts.js';
 
 export class LoginView extends ViewForController {
     constructor(controller, parent) {
         super(controller, parent);
         this.container.className = 'loginController';
         this.currentController = null;
+        this.view = null
 
         this.loginIcon = div(this.elementsContainer, { className: "iconDiv" });
         this.loginImg = img(this.loginIcon, { className: "IconImg", src: "../../../assets/LoginIcon.png" });
@@ -22,6 +24,7 @@ export class LoginView extends ViewForController {
         this.loginBtn = div(this.elementsContainer, { className: "accessBtn", innerHTML: "Login", onclick: this.onLoginBtn.bind(this) })
     }
     onLoginBtn() {
+        let myAlerts = new AlertLibrary();
         let emailStoraged = localStorage.getItem('email');
         let idStoraged = localStorage.getItem('id');
 
@@ -29,11 +32,14 @@ export class LoginView extends ViewForController {
         let idValue = this.idInput.value;
 
         if (emailValue === emailStoraged && idValue === idStoraged) {
-            console.log('Account logged in')
+
+            this.controller.appManager.showController(MANAGE)
+            this.controller.delete()
+
         } else {
-            console.log('incorrect credentials')
+            myAlerts.errorAlert(this.elementsContainer, () => {
+                console.log('incorrect credentials');
+            });
         }
-        this.controller.appManager.showController(MANAGE)
-        this.delete()
     }
 }

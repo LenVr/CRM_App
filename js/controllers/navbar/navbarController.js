@@ -1,7 +1,7 @@
 import { View } from "../../views/view.js";
 import { div } from "../../libs/html.js";
 import { Controller } from "../controller.js";
-import { MENU } from "../../libs/constantes.js"
+import { LOGIN, MANAGE, MENU, SIGNIN } from "../../libs/constantes.js"
 
 
 

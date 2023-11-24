@@ -4,7 +4,7 @@ import { MenuController } from "./controllers/menuController/menuController.js";
 import { NavbarController } from "./controllers/navbar/navbarController.js";
 import { SignInController } from "./controllers/signInController/signInController.js";
 
-import { LOGIN, MANAGE, MENU, NONE, SIGNIN } from "./libs/constantes.js";
+import { CHANGE_PLAN, COMPLAIN, DISCONNECT, LOGIN, MAKE_PM, MANAGE, MENU, NONE, SIGNIN, UPDATE_PM } from "./libs/constantes.js";
 import { div } from "./libs/html.js";
 
 export class AppManager {
@@ -38,9 +38,17 @@ export class AppManager {
                 this.currentController = new SignInController(this, this.controllerContainer);
                 break;
             case MANAGE:
-                if (this.currentController != null) {
-                    this.currentController = new ManageController(this, this.controllerContainer)
-                }
+                this.currentController = new ManageController(this, this.controllerContainer)
+                break
+            case CHANGE_PLAN:
+                break;
+            case COMPLAIN:
+                break;
+            case DISCONNECT:
+                break;
+            case MAKE_PM:
+                break
+            case UPDATE_PM:
                 break
         }
     }
