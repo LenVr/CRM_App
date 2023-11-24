@@ -1,9 +1,10 @@
 import { LoginController } from "./controllers/loginController/loginController.js";
+import { ManageController } from "./controllers/manageController/manageController.js";
 import { MenuController } from "./controllers/menuController/menuController.js";
 import { NavbarController } from "./controllers/navbar/navbarController.js";
 import { SignInController } from "./controllers/signInController/signInController.js";
 
-import { LOGIN, MENU, NONE, SIGNIN, CREATE_ALERT } from "./libs/constantes.js";
+import { LOGIN, MANAGE, MENU, NONE, SIGNIN } from "./libs/constantes.js";
 import { div } from "./libs/html.js";
 
 export class AppManager {
@@ -36,6 +37,11 @@ export class AppManager {
             case SIGNIN:
                 this.currentController = new SignInController(this, this.controllerContainer);
                 break;
+            case MANAGE:
+                if (this.currentController != null) {
+                    this.currentController = new ManageController(this, this.controllerContainer)
+                }
+                break
         }
     }
 }

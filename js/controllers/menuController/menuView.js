@@ -54,7 +54,6 @@ export class MenuView extends ViewForController {
     /* img movement and img change */
 
     /* Access btns and nav logic */
-
     onLoginBtn() {
         this.controller.appManager.showController(LOGIN)
     }
