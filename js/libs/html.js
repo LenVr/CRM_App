@@ -22,6 +22,14 @@ export const span = function (parent, attributes) {
     return createElement('span', parent, attributes);
 }
 
+export const select = function (parent, attributes) {
+    return createElement('select', parent, attributes);
+}
+
+export const option = function (parent, attributes) {
+    return createElement('option', parent, attributes);
+}
+
 const createElement = function (type, parent, attributes) {
     let element = document.createElement(type);
     parent.appendChild(element);

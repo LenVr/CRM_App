@@ -1,3 +1,4 @@
+import { ChangePlanController } from "./controllers/changePlanController/changePlanController.js";
 import { LoginController } from "./controllers/loginController/loginController.js";
 import { ManageController } from "./controllers/manageController/manageController.js";
 import { MenuController } from "./controllers/menuController/menuController.js";
@@ -38,9 +39,10 @@ export class AppManager {
                 this.currentController = new SignInController(this, this.controllerContainer);
                 break;
             case MANAGE:
-                this.currentController = new ManageController(this, this.controllerContainer)
+                this.currentController = new ManageController(this, this.controllerContainer);
                 break
             case CHANGE_PLAN:
+                this.currentController = new ChangePlanController(this, this.controllerContainer);
                 break;
             case COMPLAIN:
                 break;

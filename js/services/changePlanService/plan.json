@@ -1,0 +1,22 @@
+{
+    "plan": [
+        {
+            "id": 1,
+            "name": "Basic",
+            "user_amount": 1,
+            "price": "$69.99"
+        },
+        {
+            "id": 2,
+            "name": "Intermediate",
+            "user_amount": 2,
+            "price": "$84.99"
+        },
+        {
+            "id": 3,
+            "name": "Advanced",
+            "user_amount": 4,
+            "price": "$109.99"
+        }
+    ]
+}

@@ -1,5 +1,5 @@
 import { MENU } from "../../libs/constantes.js";
-import { div, img, input, p } from "../../libs/html.js";
+import { div, img, input, p, select, option } from "../../libs/html.js";
 import { ViewForController } from "../../views/ViewForController.js";
 import { AlertLibrary } from '../../libs/alerts.js';
 
@@ -39,6 +39,12 @@ export class SigninView extends ViewForController {
         this.idInput = input(this.contactDivInfo, { className: "input", name: "id" });
         /* contact information */
 
+        this.InputPlan = select(this.elementsContainer, { className: "input", name: "id", id: "planId" });
+        this.placeHolderSelect = option(this.InputPlan, { className: "option", value: '0', disabled: true, innerHTML: "Select a plan" });
+        this.BasicOption = option(this.InputPlan, { className: "option", value: "1", innerHTML: "Basic plan" });
+        this.intermediateOption = option(this.InputPlan, { className: "option", value: "2", innerHTML: "Intermediate plan" });
+        this.AdvancedOption = option(this.InputPlan, { className: "option", value: "3", innerHTML: "Advanced plan" });
+
         this.createAccountBtn = div(this.elementsContainer, { className: "accessBtn", innerHTML: "Create Account", onclick: this.onCreate.bind(this) });
     }
 
@@ -52,25 +58,43 @@ export class SigninView extends ViewForController {
         let phone = this.phoneInput.value;
         let id = this.idInput.value;
 
+        let plan = this.InputPlan.value;
 
-        if (firstName !== '') {
-            window.localStorage.setItem('lastName', lastName)
-        } if (lastName !== '') {
-            window.localStorage.setItem('lastName', lastName)
-        } if (date !== '') {
-            window.localStorage.setItem('date', date)
-        } if (email !== '') {
-            window.localStorage.setItem('email', email)
-        } if (phone !== '') {
-            window.localStorage.setItem('phone', phone)
-        } if (id !== '') {
-            window.localStorage.setItem('id', id)
-            myAlerts.successAlert(this.elementsContainer, () => {
-                this.controller.appManager.showController(MENU)
+
+        if (firstName === '' || lastName === "" || date === "" || email === "" || phone === "" || id === '' || plan === "0") {
+
+            myAlerts.errorAlert(this.elementsContainer, () => {
+                console.log('Cerrando la alerta de error');
             });
         } else {
-            myAlerts.errorAlert(this.elementsContainer, () => {
-                console.log('closing Alert')
+            window.localStorage.setItem('firstName', firstName);
+            window.localStorage.setItem('lastName', lastName);
+            window.localStorage.setItem('date', date);
+            window.localStorage.setItem('email', email);
+            window.localStorage.setItem('phone', phone);
+            window.localStorage.setItem('id', id);
+
+            if (plan === "1") {
+                window.localStorage.setItem('id', 1);
+                window.localStorage.setItem('name', "Basic");
+                window.localStorage.setItem('user_amount', 1);
+                window.localStorage.setItem('price', "$69.99")
+            }
+            if (plan === "2") {
+                window.localStorage.setItem('id', 2);
+                window.localStorage.setItem('name', "Intermediate");
+                window.localStorage.setItem('user_amount', 1);
+                window.localStorage.setItem('price', "$84.99")
+            }
+            if (plan === "3") {
+                window.localStorage.setItem('id', 3);
+                window.localStorage.setItem('name', "Avanced");
+                window.localStorage.setItem('user_amount', 4);
+                window.localStorage.setItem('price', "$109.99")
+            }
+
+            myAlerts.successAlert(this.elementsContainer, () => {
+                this.controller.appManager.showController(MENU);
             });
         }
     }
