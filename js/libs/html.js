@@ -18,6 +18,10 @@ export const h2 = function (parent, attributes) {
     return createElement('h2', parent, attributes);
 }
 
+export const h1 = function (parent, attributes) {
+    return createElement('h1', parent, attributes);
+}
+
 export const span = function (parent, attributes) {
     return createElement('span', parent, attributes);
 }
