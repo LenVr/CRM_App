@@ -11,7 +11,7 @@ export class SigninView extends ViewForController {
         this.controller = controller;
 
         this.signInIcon = div(this.elementsContainer, { className: "iconDiv" });
-        this.signImg = img(this.signInIcon, { className: "IconImg", src: "../../../assets/AccIcon.png" });
+        this.signImg = img(this.signInIcon, { className: "IconImg", src: "assets/AccIcon.png" });
 
         this.inputsDiv = div(this.elementsContainer, { className: "inputsDiv" });
         this.personalDivInfo = div(this.inputsDiv, { className: "personalDivInfo" });
