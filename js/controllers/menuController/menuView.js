@@ -11,11 +11,11 @@ export class MenuView extends ViewForController {
         this.cloudIconDiv = div(this.elementsContainer, { className: "cloudIconDiv", id: "cloudIcon" });
 
         this.images = [
-            '../../../assets/nube1.png',
-            '../../../assets/nube2.png',
-            '../../../assets/nube3.png',
-            '../../../assets/nube4.png',
-            '../../../assets/nube5.png',
+            'assets/nube1.png',
+            'assets/nube2.png',
+            'assets/nube3.png',
+            'ssets/nube4.png',
+            'assets/nube5.png',
         ]
 
         this.currentIndex = 0;
