@@ -11,7 +11,7 @@ export class LoginView extends ViewForController {
         this.view = null
 
         this.loginIcon = div(this.elementsContainer, { className: "iconDiv" });
-        this.loginImg = img(this.loginIcon, { className: "IconImg", src: "../../../assets/LoginIcon.png" });
+        this.loginImg = img(this.loginIcon, { className: "IconImg", src: "https://github.com/LenVr/CRM_App/blob/master/assets/LoginIcon.png" });
 
         this.loginDivInputs = div(this.elementsContainer, { className: 'loginDivInputs' })
 
