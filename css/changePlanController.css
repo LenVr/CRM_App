@@ -1,0 +1,63 @@
+.changePlanController {
+    width: 100%;
+    height: auto;
+    display: grid;
+
+}
+
+.plansContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+    margin: auto;
+}
+
+.currentPlanContainer,
+.optionPlanContainer {
+    padding: 15px;
+    background-color: #1383df;
+    height: 95%;
+    width: 100%;
+
+    border: solid white 2px;
+    border-radius: 5px;
+
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .plansContainer {
+        flex-direction: column;
+    }
+}
+
+.currentPlanInformation {
+    margin: 20px;
+}
+
+.currentPlanName {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.currentPlanUserAmount,
+.currentPlanPrice {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.optionPlanContainer {
+    margin: 15px;
+    font-size: 20px;
+}
+
+.planName,
+.planUserAmount,
+.planPrice {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
