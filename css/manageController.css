@@ -18,9 +18,10 @@
     font-weight: bold;
     color: black;
     font-weight: bold;
+    transition: transform 0.1s ease;
 }
 
 .accessBtnSv:hover {
     cursor: pointer;
-    scale: 1.09;
+    transform: scale(1.05);
 }

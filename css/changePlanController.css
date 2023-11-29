@@ -1,63 +1,104 @@
-.changePlanController {
-    width: 100%;
-    height: auto;
-    display: grid;
-
-}
-
 .plansContainer {
-    width: 100%;
     display: flex;
     flex-direction: row;
 
     align-items: center;
     justify-content: center;
     height: 50%;
-    margin: auto;
 }
 
 .currentPlanContainer,
 .optionPlanContainer {
-    padding: 15px;
-    background-color: #1383df;
-    height: 95%;
-    width: 100%;
+    padding: 5%;
+    height: 50%;
+    width: 40%;
 
+    background-color: #1383df;
     border: solid white 2px;
     border-radius: 5px;
 
     color: white;
+    margin: 10px;
+
+    transition: transform 0.5s ease;
 }
 
-@media (max-width: 768px) {
-    .plansContainer {
-        flex-direction: column;
-    }
-}
+
 
 .currentPlanInformation {
-    margin: 20px;
+    margin: 5%;
 }
 
-.currentPlanName {
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
+.currentPlanName,
 .currentPlanUserAmount,
 .currentPlanPrice {
     font-size: 20px;
     margin-bottom: 10px;
 }
 
-.optionPlanContainer {
-    margin: 15px;
-    font-size: 20px;
-}
-
 .planName,
 .planUserAmount,
 .planPrice {
-    margin-bottom: 10px;
+    background-color: rgb(0, 191, 255);
+    padding: 1vw;
+    margin-bottom: 1%;
     font-size: 20px;
+}
+
+
+.planInformationContainer {
+    width: 100%;
+}
+
+.planInformation {
+    font-size: 20px;
+}
+
+@media (max-width: 768px) {
+    .plansContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        justify-content: baseline;
+        width: 100vw;
+        /* Usar viewport width en lugar de porcentaje */
+        margin: 0;
+    }
+
+    .currentPlanContainer,
+    .optionPlanContainer {
+        width: 90vw;
+
+    }
+
+    .planInformation {
+        font-size: 15px;
+    }
+}
+
+.changeBtn {
+    text-align: center;
+    font-weight: bolder;
+
+    width: 100%;
+    background-color: rgb(0, 191, 255);
+
+    margin-top: 20px;
+    padding: 10px;
+
+    border-radius: 5px;
+    border: solid white 1px;
+    transition: transform 0.5s ease;
+
+}
+
+.changeBtn:hover {
+    scale: 1.09;
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.currentPlanContainer:hover,
+.optionPlanContainer:hover {
+    transform: scale(1.05);
 }

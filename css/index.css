@@ -212,9 +212,11 @@
     border: 1px solid black;
 
     font-weight: bold;
+
+    transition: transform 0.5s ease;
 }
 
 .accessBtn:hover {
     cursor: pointer;
-    scale: 1.09;
+    transform: scale(1.05);
 }
