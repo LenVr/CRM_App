@@ -14,7 +14,7 @@ export class MenuView extends ViewForController {
             'assets/nube1.png',
             'assets/nube2.png',
             'assets/nube3.png',
-            'ssets/nube4.png',
+            'assets/nube4.png',
             'assets/nube5.png',
         ]
 
