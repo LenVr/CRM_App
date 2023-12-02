@@ -38,62 +38,70 @@ export class ChangePlanView extends ViewForController {
     }
 
     createOptionPlanInfo() {
+        const createPlanInfo = (container, planName, userAmount, price, information) => {
+            const planNameElement = h2(container, { className: "planName", innerHTML: planName });
+            const planUserAmountElement = p(container, { className: 'planUserAmount', innerHTML: `User: ${userAmount}` });
+            const planPriceElement = p(container, { className: "planPrice", innerHTML: `Price: $${price}` });
+            const informationPlanContainer = div(container, { className: "planInformationContainer" });
+            const planInformationElement = p(informationPlanContainer, { className: 'planInformation', innerHTML: information });
+
+            return { planNameElement, planUserAmountElement, planPriceElement, informationPlanContainer, planInformationElement };
+        };
+
         if (this.localStoragePlanName === 'Intermediate') {
+            const {
+                planNameElement: planName1,
+                planUserAmountElement: planUserAmount1,
+                planPriceElement: planPrice1,
+                informationPlanContainer: informationPlanContainer1,
+                planInformationElement: planInformation1
+            } = createPlanInfo(this.optionPlanContainer1, "Plan: Advanced", 4, 109.99, "The group option for $109.99. Full access for up to four people, maximizing collaborative learning. Elevate your language skills together!");
 
-            this.planName = h2(this.optionPlanContainer1, { className: "planName", innerHTML: "Plan: Advanced" });
-            this.planUserAmount = p(this.optionPlanContainer1, { className: 'planUserAmount', innerHTML: "User: 4" });
-            this.planPrice = p(this.optionPlanContainer1, { className: "planPrice", innerHTML: `Price: $109.99` });
-            this.informationPlanContainer = div(this.optionPlanContainer1, { className: "planInformationContainer" })
-
-
-            this.planInformation = p(this.informationPlanContainer, { className: 'planInformation', innerHTML: "The group option for $109.99. Full access for up to four people, maximizing collaborative learning. Elevate your language skills together!" })
-
-            this.planName = h2(this.optionPlanContainer2, { className: "planName", innerHTML: "Plan: Basic" });
-            this.planUserAmount = p(this.optionPlanContainer2, { className: 'planUserAmount', innerHTML: "User: 1" });
-            this.planPrice = p(this.optionPlanContainer2, { className: "planPrice", innerHTML: `Price: $69.99` });
-            this.informationPlanContainer = div(this.optionPlanContainer2, { className: "planInformationContainer" })
-
-
-            this.planInformation = p(this.informationPlanContainer, { className: 'planInformation', innerHTML: "Experience personalized English learning for $69.99. Full access to exclusive classes and resources to enhance your skills at your own pace." })
-
+            const {
+                planNameElement: planName2,
+                planUserAmountElement: planUserAmount2,
+                planPriceElement: planPrice2,
+                informationPlanContainer: informationPlanContainer2,
+                planInformationElement: planInformation2
+            } = createPlanInfo(this.optionPlanContainer2, "Plan: Basic", 1, 69.99, "Experience personalized English learning for $69.99. Full access to exclusive classes and resources to enhance your skills at your own pace.");
         }
         if (this.localStoragePlanName === 'Advanced') {
+            const {
+                planNameElement: planName1,
+                planUserAmountElement: planUserAmount1,
+                planPriceElement: planPrice1,
+                informationPlanContainer: informationPlanContainer1,
+                planInformationElement: planInformation1
+            } = createPlanInfo(this.optionPlanContainer1, "Plan: Intermediate", 2, 84.99, "Share the learning experience for $84.99. Premium access for two users, strengthening skills together.");
 
-            this.planName = h2(this.optionPlanContainer1, { className: "planName", innerHTML: "Plan: Intermediate" });
-            this.planUserAmount = p(this.optionPlanContainer1, { className: 'planUserAmount', innerHTML: "User: 2" });
-            this.planPrice = p(this.optionPlanContainer1, { className: "planPrice", innerHTML: `Price: $84.99` });
-            this.informationPlanContainer = div(this.optionPlanContainer1, { className: "planInformationContainer" })
-
-
-            this.planInformation = p(this.informationPlanContainer, { className: 'planInformation', innerHTML: "Share the learning experience for $84.99. Premium access for two users, strengthening skills together." })
-
-
-            this.planName = h2(this.optionPlanContainer2, { className: "planName", innerHTML: "Plan: Basic" });
-            this.planUserAmount = p(this.optionPlanContainer2, { className: 'planUserAmount', innerHTML: "User: 1" });
-            this.planPrice = p(this.optionPlanContainer2, { className: "planPrice", innerHTML: `Price: $69.99` });
-            this.informationPlanContainer = div(this.optionPlanContainer2, { className: "planInformationContainer" })
-
-
-            this.planInformation = p(this.informationPlanContainer, { className: 'planInformation', innerHTML: "Experience personalized English learning for $69.99. Full access to exclusive classes and resources to enhance your skills at your own pace." })
+            const {
+                planNameElement: planName2,
+                planUserAmountElement: planUserAmount2,
+                planPriceElement: planPrice2,
+                informationPlanContainer: informationPlanContainer2,
+                planInformationElement: planInformation2
+            } = createPlanInfo(this.optionPlanContainer2, "Plan: Basic", 1, 69.99, "Experience personalized English learning for $69.99. Full access to exclusive classes and resources to enhance your skills at your own pace.");
         }
         if (this.localStoragePlanName === 'Basic') {
+            const {
+                planNameElement: planName1,
+                planUserAmountElement: planUserAmount1,
+                planPriceElement: planPrice1,
+                informationPlanContainer: informationPlanContainer1,
+                planInformationElement: planInformation1
+            } = createPlanInfo(this.optionPlanContainer1, "Plan: Intermediate", 2, 84.99, "Share the learning experience for $84.99. Premium access for two users, strengthening skills together.");
 
-            this.planName = h2(this.optionPlanContainer1, { className: "planName", innerHTML: "Plan: Intermediate" });
-            this.planUserAmount = p(this.optionPlanContainer1, { className: 'planUserAmount', innerHTML: "User: 2" });
-            this.planPrice = p(this.optionPlanContainer1, { className: "planPrice", innerHTML: `Price: $84.99` });
-            this.informationPlanContainer = div(this.optionPlanContainer1, { className: "planInformationContainer" })
-
-            this.planInformation = p(this.informationPlanContainer, { className: 'planInformation', innerHTML: "Share the learning experience for $84.99. Premium access for two users, strengthening skills together." })
-
-
-            this.planName = h2(this.optionPlanContainer2, { className: "planName", innerHTML: "Plan: Advanced" });
-            this.planUserAmount = p(this.optionPlanContainer2, { className: 'planUserAmount', innerHTML: "User: 4" });
-            this.planPrice = p(this.optionPlanContainer2, { className: "planPrice", innerHTML: `Price: $109.99` });
-            this.informationPlanContainer = div(this.optionPlanContainer2, { className: "planInformationContainer" })
-
-            this.planInformation = p(this.informationPlanContainer, { className: 'planInformation', innerHTML: "The group option for $109.99. Full access for up to four people, maximizing collaborative learning. Elevate your language skills together!" })
-
+            const {
+                planNameElement: planName2,
+                planUserAmountElement: planUserAmount2,
+                planPriceElement: planPrice2,
+                informationPlanContainer: informationPlanContainer2,
+                planInformationElement: planInformation2
+            } = createPlanInfo(this.optionPlanContainer2, "Plan: Advanced", 4, 109.99, "The group option for $109.99. Full access for up to four people, maximizing collaborative learning. Elevate your language skills together!");
         }
     }
+
+
+
 
 }
