@@ -30,11 +30,6 @@ export class ChangePlanView extends ViewForController {
         this.localStoragePlanName = localStorage.getItem('name');
         this.createOptionPlanInfo()
 
-        this.acceptBtn1 = div(this.optionPlanContainer1, { className: "changeBtn", innerHTML: "Select plan" });
-
-        this.acceptBtn2 = div(this.optionPlanContainer2, { className: "changeBtn", innerHTML: "Select plan" });
-
-
     }
 
     createOptionPlanInfo() {
@@ -56,6 +51,7 @@ export class ChangePlanView extends ViewForController {
                 informationPlanContainer: informationPlanContainer1,
                 planInformationElement: planInformation1
             } = createPlanInfo(this.optionPlanContainer1, "Plan: Advanced", 4, 109.99, "The group option for $109.99. Full access for up to four people, maximizing collaborative learning. Elevate your language skills together!");
+            this.acceptBtn1 = div(this.optionPlanContainer1, { className: "changeBtn", innerHTML: "Select plan", onclick: () => this.handleAcceptBtnClick("Advanced") });
 
             const {
                 planNameElement: planName2,
@@ -64,6 +60,7 @@ export class ChangePlanView extends ViewForController {
                 informationPlanContainer: informationPlanContainer2,
                 planInformationElement: planInformation2
             } = createPlanInfo(this.optionPlanContainer2, "Plan: Basic", 1, 69.99, "Experience personalized English learning for $69.99. Full access to exclusive classes and resources to enhance your skills at your own pace.");
+            this.acceptBtn2 = div(this.optionPlanContainer2, { className: "changeBtn", innerHTML: "Select plan", onclick: () => this.handleAcceptBtnClick("Basic") });
         }
         if (this.localStoragePlanName === 'Advanced') {
             const {
@@ -73,6 +70,8 @@ export class ChangePlanView extends ViewForController {
                 informationPlanContainer: informationPlanContainer1,
                 planInformationElement: planInformation1
             } = createPlanInfo(this.optionPlanContainer1, "Plan: Intermediate", 2, 84.99, "Share the learning experience for $84.99. Premium access for two users, strengthening skills together.");
+            this.acceptBtn1 = div(this.optionPlanContainer1, { className: "changeBtn", innerHTML: "Select plan", onclick: () => this.handleAcceptBtnClick("Intermediate") });
+
 
             const {
                 planNameElement: planName2,
@@ -81,6 +80,7 @@ export class ChangePlanView extends ViewForController {
                 informationPlanContainer: informationPlanContainer2,
                 planInformationElement: planInformation2
             } = createPlanInfo(this.optionPlanContainer2, "Plan: Basic", 1, 69.99, "Experience personalized English learning for $69.99. Full access to exclusive classes and resources to enhance your skills at your own pace.");
+            this.acceptBtn2 = div(this.optionPlanContainer2, { className: "changeBtn", innerHTML: "Select plan", onclick: () => this.handleAcceptBtnClick("Basic") });
         }
         if (this.localStoragePlanName === 'Basic') {
             const {
@@ -90,6 +90,7 @@ export class ChangePlanView extends ViewForController {
                 informationPlanContainer: informationPlanContainer1,
                 planInformationElement: planInformation1
             } = createPlanInfo(this.optionPlanContainer1, "Plan: Intermediate", 2, 84.99, "Share the learning experience for $84.99. Premium access for two users, strengthening skills together.");
+            this.acceptBtn1 = div(this.optionPlanContainer1, { className: "changeBtn", innerHTML: "Select plan", onclick: () => this.handleAcceptBtnClick("Intermediate") });
 
             const {
                 planNameElement: planName2,
@@ -98,10 +99,35 @@ export class ChangePlanView extends ViewForController {
                 informationPlanContainer: informationPlanContainer2,
                 planInformationElement: planInformation2
             } = createPlanInfo(this.optionPlanContainer2, "Plan: Advanced", 4, 109.99, "The group option for $109.99. Full access for up to four people, maximizing collaborative learning. Elevate your language skills together!");
+            this.acceptBtn2 = div(this.optionPlanContainer2, { className: "changeBtn", innerHTML: "Select plan", onclick: () => this.handleAcceptBtnClick("Advanced") });
         }
     }
 
-
-
-
+    handleAcceptBtnClick(selectedPlan) {
+        let myAlerts = new AlertLibrary();
+        myAlerts.successAlertChangePlan(this.elementsContainer, () => {
+            window.localStorage.removeItem('name');
+            window.localStorage.removeItem('user_amount');
+            window.localStorage.removeItem('price')
+            switch (selectedPlan) {
+                case 'Advanced':
+                    window.localStorage.setItem('name', "Advanced");
+                    window.localStorage.setItem('user_amount', 4);
+                    window.localStorage.setItem('price', "$109.99")
+                    break;
+                case 'Intermediate':
+                    window.localStorage.setItem('name', "Intermediate");
+                    window.localStorage.setItem('user_amount', 2);
+                    window.localStorage.setItem('price', "$84.99")
+                    break;
+                case 'Basic':
+                    window.localStorage.setItem('name', "Basic");
+                    window.localStorage.setItem('user_amount', 1);
+                    window.localStorage.setItem('price', "$69.99")
+                    break;
+                default:
+                    break;
+            }
+        });
+    }
 }

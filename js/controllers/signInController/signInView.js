@@ -75,19 +75,16 @@ export class SigninView extends ViewForController {
             window.localStorage.setItem('id', id);
 
             if (plan === "1") {
-                window.localStorage.setItem('id', 1);
                 window.localStorage.setItem('name', "Basic");
                 window.localStorage.setItem('user_amount', 1);
                 window.localStorage.setItem('price', "$69.99")
             }
             if (plan === "2") {
-                window.localStorage.setItem('id', 2);
                 window.localStorage.setItem('name', "Intermediate");
                 window.localStorage.setItem('user_amount', 2);
                 window.localStorage.setItem('price', "$84.99")
             }
             if (plan === "3") {
-                window.localStorage.setItem('id', 3);
                 window.localStorage.setItem('name', "Advanced");
                 window.localStorage.setItem('user_amount', 4);
                 window.localStorage.setItem('price', "$109.99")
