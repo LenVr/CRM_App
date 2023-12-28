@@ -34,6 +34,10 @@ export const option = function (parent, attributes) {
     return createElement('option', parent, attributes);
 }
 
+export const textArea = function (parent, attributes) {
+    return createElement('textArea', parent, attributes);
+}
+
 const createElement = function (type, parent, attributes) {
     let element = document.createElement(type);
     parent.appendChild(element);

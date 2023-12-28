@@ -1,0 +1,43 @@
+.complainController {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.containerComplain {
+    width: 80%;
+    height: 80%;
+    background: linear-gradient(90deg, #aad4ff, #1f90d2);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px 1px;
+}
+
+.textArea {
+    width: 70%;
+    height: 30%;
+}
+
+.titleComplain {
+    font-size: 40px;
+    color: white;
+    margin: 30px;
+    text-shadow: black 2px 2px 2px;
+}
+
+.instructions {
+    font-size: 20px;
+    color: white;
+    margin: 15px;
+    text-shadow: black 2px 2px 2px;
+}
+
+.textArea {
+    border-radius: 10px;
+    border-color: white;
+}

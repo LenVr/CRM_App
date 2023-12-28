@@ -128,6 +128,7 @@ export class ChangePlanView extends ViewForController {
                 default:
                     break;
             }
+            this.delete()
         });
     }
 }
