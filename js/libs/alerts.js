@@ -214,6 +214,39 @@ function AlertLibrary() {
 
         alertDiv.appendChild(continueBtn)
     }
+    AlertLibrary.prototype.successAlertDisconect = function (parent, action) {
+
+        let alertDivFade = document.createElement('div');
+        parent.appendChild(alertDivFade);
+        alertDivFade.className = 'alertDivFade';
+
+        this.alertDivFade = alertDivFade;
+
+        let alertDiv = document.createElement('div');
+        alertDivFade.appendChild(alertDiv)
+        alertDiv.className = "alertDiv";
+
+        let checkIcon = document.createElement('p');
+        checkIcon.className = 'checkIcon';
+        checkIcon.innerHTML = '✔️';
+        alertDiv.appendChild(checkIcon);
+
+        let textAlert = document.createElement('p');
+        textAlert.className = 'textAlert';
+        textAlert.innerHTML = 'Cancelation request completed';
+        alertDiv.appendChild(textAlert);
+
+        let continueBtn = document.createElement('div');
+        continueBtn.innerHTML = 'Ok';
+        continueBtn.className = 'accessBtn';
+        continueBtn.onclick = function () {
+            action();
+            // Remove the alert after the action is performed
+            parent.removeChild(alertDivFade);
+        };
+
+        alertDiv.appendChild(continueBtn)
+    }
 }
 
 export { AlertLibrary };

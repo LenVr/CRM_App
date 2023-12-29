@@ -1,5 +1,6 @@
 import { ChangePlanController } from "./controllers/changePlanController/changePlanController.js";
 import { ComplainController } from "./controllers/complainController/complainController.js";
+import { DisconnectController } from "./controllers/disconnectController/disconnectController.js";
 import { LoginController } from "./controllers/loginController/loginController.js";
 import { ManageController } from "./controllers/manageController/manageController.js";
 import { MenuController } from "./controllers/menuController/menuController.js";
@@ -49,6 +50,7 @@ export class AppManager {
                 this.currentController = new ComplainController(this, this.controllerContainer);
                 break;
             case DISCONNECT:
+                this.currentController = new DisconnectController(this, this.controllerContainer);
                 break;
             case MAKE_PM:
                 break

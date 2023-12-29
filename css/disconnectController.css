@@ -1,0 +1,40 @@
+.accessBtnDel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    background-color: #f43965;
+    width: 25%;
+    height: 40px;
+    margin-top: 50px;
+
+    box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.5);
+
+    border-radius: 5px;
+    border: 1px solid white;
+
+    font-weight: bold;
+    color: white;
+    font-weight: bold;
+    transition: transform 0.1s ease;
+}
+
+.accessBtnDel:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.containerDisclosure {
+    width: 80%;
+    height: auto;
+    background: linear-gradient(160deg, #2388ee, #599bc1);
+
+    padding: 30px;
+    border-radius: 10px 10px 10px 2px;
+}
+
+.disclosureText {
+    color: white;
+}
