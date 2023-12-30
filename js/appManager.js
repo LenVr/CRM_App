@@ -1,4 +1,4 @@
-import { MakePaymentController } from "./controllers/MakePaymentController/makePaymenController.js";
+import { MakePaymentController } from "./controllers/makePaymentController/makePaymentController.js";
 import { ChangePlanController } from "./controllers/changePlanController/changePlanController.js";
 import { ComplainController } from "./controllers/complainController/complainController.js";
 import { DisconnectController } from "./controllers/disconnectController/disconnectController.js";
