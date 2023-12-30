@@ -27,7 +27,6 @@ export class ManageView extends ViewForController {
         this.complainBtn = div(this.elementsContainer, { className: "accessBtn", innerHTML: "Complain", onclick: this.onComplain.bind(this) });
         this.disconnectBtn = div(this.elementsContainer, { className: "accessBtn", innerHTML: "Disconnect customer", onclick: this.onDisconnect.bind(this) });
         this.paymentBtn = div(this.elementsContainer, { className: "accessBtn", innerHTML: "Make payment", onclick: this.onPaymentBtn.bind(this) });
-        this.updatePmBtn = div(this.elementsContainer, { className: "accessBtn", innerHTML: "Update payment", onclick: this.onUpdateBtn.bind(this) });
 
         this.acceptBtn = div(this.elementsContainer, { className: "accessBtnSv", innerHTML: "Save changes", onclick: this.onAcceptBtn.bind(this) });
 
@@ -57,10 +56,6 @@ export class ManageView extends ViewForController {
 
     onPaymentBtn() {
         this.controller.appManager.showController(MAKE_PM)
-    }
-
-    onUpdateBtn() {
-        this.controller.appManager.showController(UPDATE_PM)
     }
 
     onAcceptBtn() {

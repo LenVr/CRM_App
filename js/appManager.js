@@ -1,3 +1,4 @@
+import { MakePaymentController } from "./controllers/MakePaymentController/makePaymenController.js";
 import { ChangePlanController } from "./controllers/changePlanController/changePlanController.js";
 import { ComplainController } from "./controllers/complainController/complainController.js";
 import { DisconnectController } from "./controllers/disconnectController/disconnectController.js";
@@ -53,6 +54,7 @@ export class AppManager {
                 this.currentController = new DisconnectController(this, this.controllerContainer);
                 break;
             case MAKE_PM:
+                this.currentController = new MakePaymentController(this, this.controllerContainer);
                 break
             case UPDATE_PM:
                 break

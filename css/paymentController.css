@@ -1,0 +1,53 @@
+.paymentController {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.inputsDiv {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    background: linear-gradient(160deg, #1081f2, #abe0ff);
+}
+
+.paymentInfoContainer,
+.paymentInfoContainer2 {
+    flex: 1;
+    box-sizing: border-box;
+    margin: 10px;
+}
+
+@media (max-width: 768px) {
+    .inputsDiv {
+        flex-direction: column;
+    }
+}
+
+
+.paymentInput {
+    border-radius: 5px;
+    border-color: white;
+    width: 200px;
+    height: 20px;
+
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.paymentTitle {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+.imgCvv {
+    width: 200px;
+    transition: transform 0.5s ease;
+}
+
+.imgCvv:hover {
+    transform: scale(1.05);
+}
